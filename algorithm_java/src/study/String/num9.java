@@ -6,20 +6,35 @@ import java.util.Scanner;
 public class num9 {
 
     static int solution(String str) {
-        int answer = 0;
 
         // 방법 1
-        // str = str.toUpperCase().replaceAll("[A-Z]", "");
-        // answer = Integer.parseInt(str);
+//        int answer = 0;
+//
+//        str = str.toUpperCase().replaceAll("[A-Z]", "");
+//        answer = Integer.parseInt(str);
+//
+//        return answer;
 
         // 방법 2. 아스키코드
+//        int answer = 0;
+//
+//        for (char x : str.toCharArray()) {
+//            if (x >= 48 && x <= 57) {
+//                answer = answer * 10 + (x - 48);
+//            }
+//        }
+//
+//        return answer;
+
+        // 방법 3. 메서드 사용
+        String answer = "";
+
         for (char x : str.toCharArray()) {
-            if (x >= 48 && x <= 57) {
-                answer = answer * 10 + (x - 48);
+            if (Character.isDigit(x)) {
+                answer += x;
             }
         }
-
-        return answer;
+        return Integer.parseInt(answer);
     }
 
     public static void main(String[] args) {
